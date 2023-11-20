@@ -19,12 +19,12 @@ import { closeLoginModal, closeSignupModal } from "@/redux/modalSlice";
 export default function Sidebar() {
   const dispatch = useDispatch();
 
-  const user = useSelector(state => state.user)
+  const user = useSelector((state) => state.user);
 
   async function handleSignOut() {
     await signOut(auth);
     dispatch(signOutUser());
-    dispatch(closeSignupModal())
+    dispatch(closeSignupModal());
     dispatch(closeLoginModal());
   }
 
@@ -41,13 +41,17 @@ export default function Sidebar() {
         <SidebarLink Icon={BookmarkIcon} text={"Bookmarks"} />
         <SidebarLink Icon={UserIcon} text={"Profile"} />
         <SidebarLink Icon={DotsCircleHorizontalIcon} text={"More"} />
-        <button className="hidden xl:inline bg-[#1d9bf0] hover:bg-[#1a8cd8] rounded-full h-[52px] w-[200px] mt-2 text-lg font-bold">
+        <button
+          className="hidden xl:inline bg-[#1d9bf0] hover:bg-[#1a8cd8]
+         rounded-full h-[52px] w-[200px] mt-2 text-lg font-bold"
+        >
           Tweet
         </button>
       </nav>
-      
+
       <div
-        className="absolute bottom-0 xl:p-3 flex justify-center items-center p-3 space-x-3 hover:bg-white hover:bg-opacity-10 rounded-full cursor-pointer"
+        className="absolute bottom-0 xl:p-3 flex justify-center items-center p-3 
+        space-x-3 hover:bg-white hover:bg-opacity-10 rounded-full cursor-pointer"
         onClick={handleSignOut}
       >
         <img
