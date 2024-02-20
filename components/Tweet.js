@@ -70,7 +70,9 @@ export default function Tweet({ data, id }) {
 
   return (
     <div
-      onClick={() => router.push("/" + id)}
+      onClick={() =>
+        !user.username ? dispatch(openLoginModal()) : router.push("/" + id)
+      }
       className="border-b border-gray-700 cursor-pointer"
     >
       <TweetHeader
@@ -154,7 +156,12 @@ export function TweetHeader({
 
         <span>{text}</span>
 
-        {image && <img className="object-cover rounded-md mt-3 max-h-80 border border-gray-700" src={image} />}
+        {image && (
+          <img
+            className="object-cover rounded-md mt-3 max-h-80 border border-gray-700"
+            src={image}
+          />
+        )}
       </div>
     </div>
   );

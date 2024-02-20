@@ -8,7 +8,6 @@ import {
   DotsCircleHorizontalIcon,
   DotsHorizontalIcon,
 } from "@heroicons/react/outline";
-import Image from "next/image";
 import SidebarLink from "./SidebarLink";
 import { signOut } from "firebase/auth";
 import { auth } from "@/firebase";
@@ -32,7 +31,14 @@ export default function Sidebar() {
     <div className="hidden sm:flex flex-col fixed h-full xl:ml-24">
       <nav className="h-full relative xl:space-y-1.5">
         <div className="flex items-center py-3 p-3 justify-start">
-          <Image src={"/assets/twitter-logo.png"} width={34} height={34} />
+          <img
+            src={
+              "https://freelogopng.com/images/all_img/1690643640twitter-x-icon-png.png"
+            }
+            alt="Twitter logo"
+            width={34}
+            height={34}
+          />
         </div>
         <SidebarLink Icon={HomeIcon} text={"Home"} />
         <SidebarLink Icon={HashtagIcon} text={"Explore"} />

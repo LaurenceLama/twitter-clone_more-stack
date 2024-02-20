@@ -33,10 +33,10 @@ export default function Postsfeed() {
   }, []);
 
   return (
-    <div className="sm:ml-16 xl:ml-[350px] max-w-2xl flex-grow border-gray-700 border-x">
+    <div className="sm:ml-16 xl:ml-[350px] max-w-2xl flex-grow border-gray-700  border-x">
       <div
         className="px-3 py-2 text-lg sm:text-xl font-bold border-b flex justify-between
-       items-center border-gray-700 sticky top-0 z-50"
+       items-center border-gray-700 bg-black bg-opacity-70 backdrop-blur sticky top-0 z-50"
       >
         Home
         <img

@@ -40,7 +40,6 @@ export default function CommentModal() {
 
     dispatch(closeCommentModal)
     router.push('/' + tweetDetails.id)
-    
   }
   
   return (

@@ -98,24 +98,24 @@ export default function CommentsPage({ tweetData }) {
             </button>
           </div>
 
-          {tweetData.comments?.map((comment) => (
-            <div className="border-b border-gray-700">
-              <div className="flex space-x-3 p-3 border-gray-700">
-                <img
-                  src={comment.photoUrl}
-                  className="w-11 h-11 rounded-full object-cover"
-                />
-                <div>
-                  <div className="text-gray-500 flex items-center space-x-2 mb-1">
-                    <h1 className="text-white font-bold">{comment.name}</h1>
-                    <span>@{comment.username}</span>
-                  </div>
+          {tweetData.comments?.map((comment, index) => (
+              <div className="border-b border-gray-700" key={index}>
+                <div className="flex space-x-3 p-3 border-gray-700">
+                  <img
+                    src={comment.photoUrl}
+                    className="w-11 h-11 rounded-full object-cover"
+                  />
+                  <div>
+                    <div className="text-gray-500 flex items-center space-x-2 mb-1">
+                      <h1 className="text-white font-bold">{comment.name}</h1>
+                      <span>@{comment.username}</span>
+                    </div>
 
-                  <span className="text-2xl">{comment.comment}</span>
+                    <span className="text-2xl">{comment.comment}</span>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
 
         <Trending />

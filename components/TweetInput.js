@@ -75,7 +75,7 @@ export default function TweetInput() {
   return (
     <div className="flex space-x-3 p-3 border-b border-gray-700">
       <img
-        src={user.photoUrl || "/assets/twitter-logo.png"}
+        src={user.photoUrl || "https://freelogopng.com/images/all_img/1690643640twitter-x-icon-png.png"}
         className="w-11 h-11 rounded-full object-cover"
       />
 
