@@ -1,7 +1,6 @@
 import { DotsHorizontalIcon, SearchIcon } from "@heroicons/react/outline";
 import { BadgeCheckIcon } from "@heroicons/react/solid";
 
-
 export default function Trending() {
   return (
     <div className="hidden lg:flex flex-col ml-7 mt-4">
@@ -67,6 +66,7 @@ export default function Trending() {
 
           <a
             href="https://www.linkedin.com/in/laurencelama/"
+            target="_blank"
             className="bg-white text-black flex items-center justify-center text-sm w-20 
             rounded-3xl font-bold h-8 transition duration-[350ms] hover:bg-[#ffffffd1]"
           >
@@ -91,6 +91,7 @@ export default function Trending() {
 
           <a
             href="https://github.com/LaurenceLama"
+            target="_blank"
             className="bg-white text-black flex items-center justify-center text-sm w-20 
             rounded-3xl font-bold h-8 transition duration-[350ms] hover:bg-[#ffffffd1]"
           >

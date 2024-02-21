@@ -1,5 +1,6 @@
 import Sidebar from "@/components/Sidebar";
 import Trending from "@/components/Trending";
+import { TweetHeader } from "@/components/Tweet";
 import { db } from "@/firebase";
 import { ArrowLeftIcon } from "@heroicons/react/outline";
 import { doc, getDoc } from "firebase/firestore";
@@ -19,7 +20,7 @@ export async function getServerSideProps(context) {
     text: data.tweet,
     comments: data.comments || null,
     timestamp: JSON.stringify(data.timestamp.toDate()),
-    image: data.image || null
+    image: data.image || null,
   };
 
   return {
@@ -45,7 +46,7 @@ export default function CommentsPage({ tweetData }) {
         >
           <div
             className="flex space-x-2 px-3 py-2 text-lg sm:text-xl font-bold
-           border-b border-gray-700 sticky top-0 z-50"
+           border-b border-gray-700 bg-black bg-opacity-70 backdrop-blur sticky top-0 z-50"
           >
             <Link href={"/"}>
               <ArrowLeftIcon className="w-7 cursor-pointer" />
@@ -99,23 +100,17 @@ export default function CommentsPage({ tweetData }) {
           </div>
 
           {tweetData.comments?.map((comment, index) => (
-              <div className="border-b border-gray-700" key={index}>
-                <div className="flex space-x-3 p-3 border-gray-700">
-                  <img
-                    src={comment.photoUrl}
-                    className="w-11 h-11 rounded-full object-cover"
-                  />
-                  <div>
-                    <div className="text-gray-500 flex items-center space-x-2 mb-1">
-                      <h1 className="text-white font-bold">{comment.name}</h1>
-                      <span>@{comment.username}</span>
-                    </div>
-
-                    <span className="text-2xl">{comment.comment}</span>
-                  </div>
-                </div>
-              </div>
-            ))}
+            <div className="border-b border-gray-700" key={index}>
+              <TweetHeader // timestamp last one
+                username={comment.username}
+                name={comment.name}
+                timestamp={comment.timestamp?.toDate()}
+                text={comment.comment}
+                photoUrl={comment.photoUrl}
+                image={comment.image}
+              />
+            </div>
+          ))}
         </div>
 
         <Trending />
